@@ -1,0 +1,89 @@
+:root {
+    --purple: #C678DE;
+    --pink:   #E06C75;
+    --gray:   #CCCCCC;
+    --orange: #D19A66;
+    --blue:   #518BFF;
+    --green:  #98C379;
+}
+
+.code-area-container {
+    flex: 7;
+    display: flex;
+}
+
+.code-area {
+    flex: 1;
+    color: white;
+    padding: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.code-area:focus {
+    outline: none;
+}
+
+.code-area-input {
+    background-color: var(--background);
+    color: red;
+    caret-color: white;
+}
+
+.code-area-display {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+}
+
+.code-area-display pre {
+    background-color: transparent !important;
+    margin: 0 !important;
+}
+
+.comment {
+    color: #56b6c2; /* cyan */
+    font-style: italic;
+}
+
+.keyword {
+    color: var(--purple);
+}
+
+.identifier {
+    color: white;
+}
+
+.type {
+    color: #e5c07b; /* yellow */
+}
+
+.string {
+    color: #98c379; /* green */
+}
+
+.number {
+    color: #e5c07b; /* yellow */
+}
+
+.annotation {
+    color: #56b6c2; /* cyan */
+}
+
+.operator {
+    color: #e06c75; /* red */
+}
+
+.class-name {
+    color: #e5c07b; /* yellow */
+}
+
+.method-name {
+    color: #61afef; /* blue */
+}
+
+.punctuation {
+    color: var(--gray); /* red */
+}

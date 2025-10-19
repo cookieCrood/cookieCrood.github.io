@@ -1,0 +1,66 @@
+
+
+.sidebar {
+    padding: 20px 0;
+    flex: 1;
+    font-size: 14px;
+    border-right: 2px solid var(--border);
+    background-color: var(--background);
+    user-select: none;
+}
+
+.sidebar-item-container {
+    padding: 0 20px;
+}
+
+.sidebar-item-delete {
+    color: var(--pink);
+    position: absolute;
+    visibility: hidden;
+    right: 0px;
+    height: 100%;
+    padding: 0 4px;
+}
+
+.sidebar-item, .sidebar-add-button {
+    padding: 6px 0;
+    color: antiquewhite;
+}
+
+.sidebar-item-container-active, .sidebar-item-container:hover:not(:has(.sidebar-add-input)) {
+    cursor: pointer;
+    background-color: var(--active);
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+.sidebar-item-container:hover .sidebar-item-delete {
+    visibility: visible;
+}
+
+.sidebar-item-icon {
+    color: var(--purple);
+}
+
+.sidebar-add-button-icon {
+    color: var(--pink);
+}
+
+.sidebar-add-input {
+    font-family: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: 1.5px solid var(--border);
+    border-radius: 0px;
+    padding: 6px;
+}
+
+.sidebar-add-input:focus {
+    outline: none;
+}
+
+.sidebar-add-button:has(.sidebar-add-input) {
+    padding: 0;
+}

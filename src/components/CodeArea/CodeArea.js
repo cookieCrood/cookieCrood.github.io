@@ -34,6 +34,26 @@ function CodeArea({ text, setFile, fileName }) {
         onInput({ target: { innerHTML: e.target.innerHTML } })
     }
 
+    const onCopy = (e) => {
+        e.preventDefault()
+        const selection = document.getSelection()
+        const text = selection.toString()
+        e.clipboardData.setData("text/plain", text)
+    };
+
+    const onPaste = (e) => {
+        e.preventDefault()
+        const text = e.clipboardData.getData("text/plain")
+
+        const selection = window.getSelection()
+        if (!selection.rangeCount) return
+        selection.deleteFromDocument()
+        selection.getRangeAt(0).insertNode(document.createTextNode(text))
+        selection.collapseToEnd()
+
+        onInput({ target: { innerHTML: e.target.innerHTML } })
+    };
+
     useEffect(() => {
         if (!text) return 
         setCode(highlighter.codeToHtml(text, { theme: darkFlat, lang: "java" }))
@@ -48,6 +68,8 @@ function CodeArea({ text, setFile, fileName }) {
             className="code-area-input code-area"
             onKeyDown={ onKeyDown }
             onInput={ onInput }
+            onCopy={ onCopy }
+            onPaste={ onPaste }
         >{ text }</pre>
 
         <pre

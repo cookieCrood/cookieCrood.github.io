@@ -84,7 +84,6 @@ function extractCode(code) {
 }
 
 function Table({ name, fields, constructors, methods }) {
-    console.log(methods)
     function TableName({ name }) {
         return <div className="diagram-table-name">
             { name }
